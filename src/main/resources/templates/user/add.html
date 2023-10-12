@@ -2,9 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Add User</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
+<th:block th:if="${error ne null and not error.isEmpty()}">
+    <p style="text-align:center;" th:text="${error}"></p>
+</th:block>
+<form method = 'post' >
+    <table>
+        <tr>
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" name="username" id="username" th:value="${name}"></td>
+        </tr>
+        <tr>
+            <td><label for="email">E-mail Address:</label></td>
+            <td><input type="email" name="email" id="email" th:value="${email}"></td>
+        </tr>
+        <tr>
+            <td><label for="passcode">Password:</label></td>
+            <td><input type="password" name="passcode" id="passcode"></td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Password:</label></td>
+            <td><input type="password" name="verify" id="verify"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type = 'submit' value = 'Submit'></td>
+        </tr>
+    </table>
+</form>
 
 </body>
 </html>
