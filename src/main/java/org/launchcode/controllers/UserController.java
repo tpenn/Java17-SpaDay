@@ -24,7 +24,9 @@ public class UserController {
     @GetMapping
     public String displayUsers(Model model) {
         model.addAttribute("users", UserData.getAll());
+        return "user/index";
     }
+
     @PostMapping("add")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         model.addAttribute("name", user.getUsername());

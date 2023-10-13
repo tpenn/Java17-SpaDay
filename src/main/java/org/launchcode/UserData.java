@@ -5,7 +5,7 @@ import org.launchcode.models.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public static class UserData {
+public class UserData {
     private static HashMap<Integer, User> userList = new HashMap<>();
 
     public static void add(User user) {
